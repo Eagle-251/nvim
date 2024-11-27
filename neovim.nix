@@ -8,7 +8,8 @@
   lua-language-server,
   ansible-language-server,
   ansible-lint,
-  ansible
+  ansible,
+  nil
 }: let
   packageName = "neovim-conf";
 
@@ -23,19 +24,20 @@
     cmp-path
     cmp_luasnip
     nvim-cmp
-    luasnip
-    friendly-snippets
-    nvim-treesitter.withAllGrammars
+    (nvim-treesitter.withPlugins (plugins: with plugins; [
+      nix
+      lua
+      yaml
+      toml
+      python
+      rust
+    ]))
+    nvim-autopairs
   ];
   
   optPlugins = with vimPlugins; [
     telescope-nvim
     toggleterm-nvim
-    cmp-nvim-lsp
-    cmp-buffer
-    cmp-path
-    cmp_luasnip
-    nvim-cmp
     luasnip
     friendly-snippets
   ];
@@ -45,6 +47,7 @@
     ansible-language-server
     ansible
     ansible-lint
+    nil
   ];
 
   foldPlugins = builtins.foldl' (
