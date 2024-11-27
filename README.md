@@ -8,7 +8,7 @@ I used https://github.com/LunarVim/Neovim-from-scratch as a base for the lua. I 
 
 You should be able to run:
 ```shell
-nix run github:Eagle-251/neovim-nixos-wrapper
+nix run github:Eagle-251/nvim
 ```
 
 There are still some loose ends, mainly the terminal wrappers toggleterm.lua. You will need to have thowse tools on your path to use those wrappers.
