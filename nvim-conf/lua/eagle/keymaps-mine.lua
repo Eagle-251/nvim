@@ -22,7 +22,7 @@ vim.g.maplocalleader = " "
 keymap('n', '<leader>h', '<cmd>noh<CR>', opts)
 
 -- Create file under cursor and open it ---
-keymap('n', 'nf', '<cmd>e <cfile><CR>', opts)
+keymap('n', 'nf', '<cmd>e %:p:h/<cfile><CR>', opts)
 
 -- Yazi file manager
 keymap('n', '<leader>e', '<cmd>Yazi<CR>', opts)
