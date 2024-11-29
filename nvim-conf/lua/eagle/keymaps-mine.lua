@@ -21,6 +21,9 @@ vim.g.maplocalleader = " "
 -- General mappings
 keymap('n', '<leader>h', '<cmd>noh<CR>', opts)
 
+-- Create file under cursor and open it ---
+keymap('n', 'nf', '<cmd>e <cfile><CR>', opts)
+
 -- Yazi file manager
 keymap('n', '<leader>e', '<cmd>Yazi<CR>', opts)
 -- keymap('n', '<leader>y', '<cmd>lua _YAZI_TOGGLE()<CR>', opts)
