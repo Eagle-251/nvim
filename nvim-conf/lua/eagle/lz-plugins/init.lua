@@ -1,7 +1,8 @@
 return {
     { "telescope.nvim", cmd = "Telescope" },
     { "toggleterm.nvim" },
-    { "L3MON4D3/LuaSnip", event = "InsertEnter" },
-    { "rafamadriz/friendly-snippets", event = "InsertEnter" },
-    { "windwp/nvim-autopair", event = "InsertEnter" },
+    { "luasnip", event = "InsertEnter" },
+    { "friendly-snippets", event = "InsertEnter" },
+    { "nvim-autopair", event = "InsertEnter" },
+    { "yazi.nvim", cmd = "Yazi" },
 }

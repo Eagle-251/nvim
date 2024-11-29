@@ -9,7 +9,9 @@
   ansible-language-server,
   ansible-lint,
   ansible,
-  nil
+  nil,
+  lazygit,
+  yazi,
 }: let
   packageName = "neovim-conf";
 
@@ -40,6 +42,7 @@
     toggleterm-nvim
     luasnip
     friendly-snippets
+    yazi-nvim
   ];
 
   extraPackages = [
@@ -48,6 +51,8 @@
     ansible
     ansible-lint
     nil
+    lazygit
+    yazi
   ];
 
   foldPlugins = builtins.foldl' (

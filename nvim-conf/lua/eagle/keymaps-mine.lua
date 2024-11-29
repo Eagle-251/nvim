@@ -22,7 +22,8 @@ vim.g.maplocalleader = " "
 keymap('n', '<leader>h', '<cmd>noh<CR>', opts)
 
 -- Yazi file manager
-keymap('n', '<leader>y', '<cmd>lua require("yazi").yazi()<CR>', opts)
+keymap('n', '<leader>e', '<cmd>Yazi<CR>', opts)
+-- keymap('n', '<leader>y', '<cmd>lua _YAZI_TOGGLE()<CR>', opts)
 
 -- Tab navigation
 keymap('n', '<A-tab>', '<cmd>tabnext<CR>', opts)
@@ -73,9 +74,6 @@ keymap('n', '<leader>fgS', '<cmd>Telescope git_stash<CR>', opts)
 keymap('n', '<leader>lo', '<cmd>Lspsaga outline<CR>', opts)
 keymap('n', '<leader>x', '<cmd>TroubleToggle<CR>', opts)
 
--- File explorer
-keymap('n', '<leader>e', '<cmd>CHADopen<CR>', opts)
-
 -- Terminal
 keymap('n', '<C-S-\\>', '<cmd>ToggleTerm size=95 direction=vertical<CR>', opts)
 keymap('n', '<M-C-\\>', '<cmd>ToggleTerm direction=horizontal<CR>', opts)
@@ -87,8 +85,8 @@ keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 
 -- Insert --
 -- Press jk fast to exit insert mode 
-keymap("i", "jk", "<ESC>", opts)
-keymap("i", "kj", "<ESC>", opts)
+-- keymap("i", "jk", "<ESC>", opts)
+-- keymap("i", "kj", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
