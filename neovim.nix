@@ -34,7 +34,7 @@
       python
       rust
     ]))
-    nvim-autopairs
+    # nvim-autopairs
   ];
   
   optPlugins = with vimPlugins; [
@@ -42,6 +42,7 @@
     toggleterm-nvim
     luasnip
     friendly-snippets
+    nvim-autopairs
     yazi-nvim
   ];
 
