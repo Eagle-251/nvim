@@ -44,6 +44,7 @@
     friendly-snippets
     nvim-autopairs
     yazi-nvim
+    nvim-surround
   ];
 
   extraPackages = [
