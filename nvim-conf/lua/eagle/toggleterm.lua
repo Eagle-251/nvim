@@ -51,7 +51,7 @@ end
 
 vim.api.nvim_set_keymap(
 	"t",
-	"<leader>tt",
+	"<C-t-t>",
 	"<cmd>lua open_next_terminal()<CR>",
 	{ noremap = true, silent = true }
 )
