@@ -45,6 +45,7 @@
     nvim-autopairs
     yazi-nvim
     nvim-surround
+    lazygit-nvim
   ];
 
   extraPackages = [

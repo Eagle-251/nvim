@@ -1,7 +1,7 @@
+require "eagle.keymaps-mine"
 require("lz.n").load("eagle.lz-plugins")
 require "eagle.telescope"
 require "eagle.options"
-require "eagle.keymaps-mine"
 require "eagle.colorscheme"
 require "eagle.lsp-test"
 require "eagle.cmp-test"

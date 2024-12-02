@@ -20,6 +20,15 @@ return {
       after = function()
           require("nvim-surround").setup({})
       end
+    },
+    {
+      "lazygit.nvim",
+       keys = {
+           { "<leader>g", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+       },
+       after = function()
+           require("lazygit")
+       end
     }
 }
 
