@@ -1,4 +1,5 @@
 {
+  callPackage,
   symlinkJoin,
   neovim-unwrapped,
   makeWrapper,
@@ -14,6 +15,8 @@
   yazi,
 }: let
   packageName = "neovim-conf";
+
+  ansible-doc-nvim = callPackage ./ansible-doc.nix {};
 
   startPlugins = with vimPlugins; [
     lz-n
@@ -46,6 +49,7 @@
     yazi-nvim
     nvim-surround
     lazygit-nvim
+    ansible-doc-nvim
   ];
 
   extraPackages = [

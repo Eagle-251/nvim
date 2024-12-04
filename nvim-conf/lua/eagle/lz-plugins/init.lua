@@ -29,6 +29,7 @@ return {
        after = function()
            require("lazygit")
        end
-    }
+    },
+    { "vimplugin-ansible-doc.nvim" }
 }
 
