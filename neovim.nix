@@ -51,6 +51,15 @@
     nvim-surround
     lazygit-nvim
     ansible-doc-nvim
+    # (nvim-treesitter.withPlugins (plugins: with plugins; [
+    #   nix
+    #   lua
+    #   yaml
+    #   toml
+    #   python
+    #   rust
+    #   groovy
+    # ]))
   ];
 
   extraPackages = [
