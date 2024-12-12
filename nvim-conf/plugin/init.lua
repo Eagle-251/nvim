@@ -1,4 +1,5 @@
 require "eagle.keymaps-mine"
+require "eagle.treesitter"
 require("lz.n").load("eagle.lz-plugins")
 require "eagle.telescope"
 require "eagle.options"
