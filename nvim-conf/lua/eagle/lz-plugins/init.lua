@@ -30,6 +30,30 @@ return {
            require("lazygit")
        end
     },
-    { "vimplugin-ansible-doc.nvim" }
+    { "vimplugin-ansible-doc.nvim" },
+    {
+      "nvim-treesitter",
+      event = "BufRead",
+      after = function ()
+        require("vimplugin-treesitter-grammar-groovy")
+        require("nvim-treesitter.configs").setup {
+          highlight = {
+            enable = true,
+          },
+          indent = {
+            enable = true,
+          },
+          textobjects = {
+            select = {
+              enable = true,
+              lookahead = true,
+              keymaps = {
+                ["ia"] = { query = "@parameter.inner", desc = "inner argument" },
+                ["aa"] = { query = "@parameter.outer", desc = "around argument" },
+              },
+            },
+          },
+        }
+      end
+    }
 }
-
