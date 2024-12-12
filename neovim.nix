@@ -36,6 +36,7 @@
       toml
       python
       rust
+      groovy
     ]))
     # nvim-autopairs
   ];
