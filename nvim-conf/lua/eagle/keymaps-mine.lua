@@ -29,8 +29,18 @@ keymap('n', '<leader>e', '<cmd>Yazi<CR>', opts)
 -- keymap('n', '<leader>y', '<cmd>lua _YAZI_TOGGLE()<CR>', opts)
 
 -- Tab navigation
-keymap('n', '<A-tab>', '<cmd>tabnext<CR>', opts)
-keymap('n', '<A-S-tab>', '<cmd>tabprevious<CR>', opts)
+-- keymap('n', '<M-Tab>', '<cmd>tabnext<CR>', opts)
+-- keymap('n', '<M-Tab>', '<cmd>tabprevious<CR>', opts)
+keymap('n', '<leader>1', '1gt')
+keymap('n', '<leader>2', '2gt')
+keymap('n', '<leader>3', '3gt')
+keymap('n', '<leader>4', '4gt')
+keymap('n', '<leader>5', '5gt')
+keymap('n', '<leader>6', '6gt')
+keymap('n', '<leader>7', '7gt')
+keymap('n', '<leader>8', '8gt')
+keymap('n', '<leader>9', '9gt')
+keymap('n', '<leader>0', '<cmd>tablast<cr>')
 
 -- Window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
