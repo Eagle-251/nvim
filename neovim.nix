@@ -13,6 +13,7 @@
   nil,
   lazygit,
   yazi,
+  git,
 }: let
   packageName = "neovim-conf";
 
@@ -69,6 +70,7 @@
     ansible-lint
     nil
     lazygit
+    git
     yazi
   ];
 
@@ -105,6 +107,7 @@
 
 in
   symlinkJoin {
+    pname = "nvim";
     name = "nvim";
     paths = [neovim-unwrapped];
     nativeBuildInputs = [makeWrapper];
