@@ -52,6 +52,7 @@
     nvim-surround
     lazygit-nvim
     ansible-doc-nvim
+    vim-obsession
     # (nvim-treesitter.withPlugins (plugins: with plugins; [
     #   nix
     #   lua

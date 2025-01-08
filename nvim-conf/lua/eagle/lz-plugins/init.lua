@@ -1,4 +1,5 @@
 return {
+    { "vim-obsession" },
     { "telescope.nvim", cmd = "Telescope" },
     { "toggleterm.nvim" },
     {
