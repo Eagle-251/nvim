@@ -78,6 +78,10 @@ keymap('n', '<leader>fa', '<cmd>Telescope<CR>', opts)
 keymap('n', '<leader>fls', '<cmd>Telescope lsp_dynamic_workspace_symbols<CR>', opts)
 
 -- Git related
+
+keymap('n', '<leader>do', '<cmd>DiffviewOpen<CR>', opts)
+keymap('n', '<leader>dc', '<cmd>DiffviewClose<CR>', opts)
+
 -- keymap('n', '<leader>g', '<cmd>lua _LAZYGIT_TOGGLE()<CR>', opts)
 -- keymap('n', '<leader>gf', '<cmd>LazyGitCurrentFile<CR>', opts)
 keymap('n', '<leader>fgs', '<cmd>Telescope git_status<CR>', opts)
