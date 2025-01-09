@@ -14,6 +14,7 @@
   lazygit,
   yazi,
   git,
+  yamlfix,
 }: let
   packageName = "neovim-conf";
 
@@ -53,6 +54,8 @@
     lazygit-nvim
     ansible-doc-nvim
     vim-obsession
+    conform-nvim
+    diffview-nvim
     # (nvim-treesitter.withPlugins (plugins: with plugins; [
     #   nix
     #   lua
@@ -73,6 +76,7 @@
     lazygit
     git
     yazi
+    yamlfix
   ];
 
   foldPlugins = builtins.foldl' (
