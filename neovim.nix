@@ -21,13 +21,13 @@
   ansible-doc-nvim = callPackage ./ansible-doc.nix {};
 
   startPlugins = with vimPlugins; [
-    lz-n
+    # lz-n
     nvim-lspconfig
-    catppuccin-nvim
-    lualine-nvim
-    gitsigns-nvim
+    # catppuccin-nvim
+    # lualine-nvim
+    # gitsigns-nvim
     cmp-nvim-lsp
-    cmp-buffer
+    # cmp-buffer
     cmp-path
     cmp_luasnip
     nvim-cmp
@@ -44,18 +44,18 @@
   ];
   
   optPlugins = with vimPlugins; [
-    telescope-nvim
-    toggleterm-nvim
-    luasnip
-    friendly-snippets
-    nvim-autopairs
-    yazi-nvim
-    nvim-surround
-    lazygit-nvim
-    ansible-doc-nvim
-    vim-obsession
-    conform-nvim
-    diffview-nvim
+    # telescope-nvim
+    # toggleterm-nvim
+    # luasnip
+    # friendly-snippets
+    # nvim-autopairs
+    # yazi-nvim
+    # nvim-surround
+    # lazygit-nvim
+    # ansible-doc-nvim
+    # vim-obsession
+    # conform-nvim
+    # diffview-nvim
     # (nvim-treesitter.withPlugins (plugins: with plugins; [
     #   nix
     #   lua
@@ -72,10 +72,10 @@
     ansible-language-server
     ansible
     ansible-lint
-    nil
-    lazygit
+    # nil
+    # lazygit
     git
-    yazi
+    # yazi
     yamlfix
   ];
 
