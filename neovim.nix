@@ -10,9 +10,7 @@
   ansible-language-server,
   ansible-lint,
   ansible,
-  nil,
-  lazygit,
-  yazi,
+  python312,
   git,
   yamlfix,
 }: let
@@ -77,6 +75,7 @@
     git
     # yazi
     yamlfix
+    python312
   ];
 
   foldPlugins = builtins.foldl' (
