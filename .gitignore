@@ -43,3 +43,5 @@ luac.out
 plugin/packer_compiled.lua
 result
 Session.vim
+.direnv
+.pre-commit-config.yaml
