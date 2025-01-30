@@ -15,10 +15,12 @@
   yazi,
   git,
   yamlfix,
-}: let
+  bash,
+}:
+let
   packageName = "neovim-conf";
 
-  ansible-doc-nvim = callPackage ./ansible-doc.nix {};
+  ansible-doc-nvim = callPackage ./ansible-doc.nix { };
 
   startPlugins = with vimPlugins; [
     lz-n
@@ -31,18 +33,20 @@
     cmp-path
     cmp_luasnip
     nvim-cmp
-    (nvim-treesitter.withPlugins (plugins: with plugins; [
-      nix
-      lua
-      yaml
-      toml
-      python
-      rust
-      groovy
-    ]))
+    (nvim-treesitter.withPlugins (
+      plugins: with plugins; [
+        nix
+        lua
+        yaml
+        toml
+        python
+        rust
+        groovy
+      ]
+    ))
     # nvim-autopairs
   ];
-  
+
   optPlugins = with vimPlugins; [
     telescope-nvim
     toggleterm-nvim
@@ -77,64 +81,51 @@
     git
     yazi
     yamlfix
+    bash
   ];
 
   foldPlugins = builtins.foldl' (
     acc: next:
-      acc
-      ++ [
-        next
-      ]
-      ++ (foldPlugins (next.dependencies or []))
-  ) [];
+    acc
+    ++ [
+      next
+    ]
+    ++ (foldPlugins (next.dependencies or [ ]))
+  ) [ ];
 
   startPluginsWithDeps = lib.unique (foldPlugins startPlugins);
   optPluginsWithDeps = lib.unique (foldPlugins optPlugins);
 
-  packpath = runCommandLocal "packpath" {} ''
+  packpath = runCommandLocal "packpath" { } ''
     mkdir -p $out/pack/${packageName}/{start,opt}
 
     ln -vsfT ${./nvim-conf} $out/pack/${packageName}/start/nvim-conf
 
-    ${
-      lib.concatMapStringsSep
-      "\n"
-      (plugin: "ln -vsfT ${plugin} $out/pack/${packageName}/start/${lib.getName plugin}")
-      startPluginsWithDeps
-    }
-    ${
-      lib.concatMapStringsSep
-      "\n"
-      (plugin: "ln -vsfT ${plugin} $out/pack/${packageName}/opt/${lib.getName plugin}")
-      optPluginsWithDeps
-    }
+    ${lib.concatMapStringsSep "\n" (
+      plugin: "ln -vsfT ${plugin} $out/pack/${packageName}/start/${lib.getName plugin}"
+    ) startPluginsWithDeps}
+    ${lib.concatMapStringsSep "\n" (
+      plugin: "ln -vsfT ${plugin} $out/pack/${packageName}/opt/${lib.getName plugin}"
+    ) optPluginsWithDeps}
   '';
 
 in
-  symlinkJoin {
-    pname = "nvim";
-    name = "nvim";
-    paths = [neovim-unwrapped];
-    nativeBuildInputs = [makeWrapper];
-    buildInputs = extraPackages;
-    postBuild = ''
-      wrapProgram $out/bin/nvim \
-        --add-flags '-u NORC' \
-        --add-flags '--cmd' \
-        --add-flags "'set packpath^=${packpath} | set runtimepath^=${packpath}'" \
-        --set-default NVIM_APPNAME nvim-custom \
-        --prefix PATH : ${lib.makeBinPath extraPackages}
-    '';
+symlinkJoin {
+  pname = "nvim";
+  name = "nvim";
+  paths = [ neovim-unwrapped ];
+  nativeBuildInputs = [ makeWrapper ];
+  buildInputs = extraPackages;
+  postBuild = ''
+    wrapProgram $out/bin/nvim \
+      --add-flags '-u NORC' \
+      --add-flags '--cmd' \
+      --add-flags "'set packpath^=${packpath} | set runtimepath^=${packpath}'" \
+      --set-default NVIM_APPNAME nvim-custom \
+      --prefix PATH : ${lib.makeBinPath extraPackages}
+  '';
 
-    passthru = {
-      inherit packpath;
-    };
-  }
-
-
-  
-  
-  
-
-  
-  
+  passthru = {
+    inherit packpath;
+  };
+}
