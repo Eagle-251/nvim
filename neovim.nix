@@ -16,6 +16,7 @@
   git,
   yamlfix,
   bash,
+  which,
 }:
 let
   packageName = "neovim-conf";
@@ -82,6 +83,7 @@ let
     yazi
     yamlfix
     bash
+    which
   ];
 
   foldPlugins = builtins.foldl' (
