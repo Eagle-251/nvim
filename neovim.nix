@@ -14,7 +14,7 @@
   lazygit,
   yazi,
   git,
-  yamlfix,
+  # yamlfix,
   bash,
   which,
 }:
@@ -81,7 +81,7 @@ let
     lazygit
     git
     yazi
-    yamlfix
+    # yamlfix
     bash
     which
   ];

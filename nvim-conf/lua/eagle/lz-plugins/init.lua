@@ -32,20 +32,20 @@ return {
        end
     },
     { "vimplugin-ansible-doc.nvim" },
-    {
-      "conform.nvim",
-      event = "BufWritePre",
-      cmd = "ConformInfo",
-      after = function ()
-        require("conform").setup({
-          formatters_by_ft = {
-            -- lua = { "stylua" },
-            yaml = { "yamlfix" },
-            ["yaml.ansible"] = { "yamlfix" },
-          },
-        })
-      end
-    },
+    -- {
+    --   "conform.nvim",
+    --   event = "BufWritePre",
+    --   cmd = "ConformInfo",
+    --   after = function ()
+    --     require("conform").setup({
+    --       formatters_by_ft = {
+    --         -- lua = { "stylua" },
+    --         yaml = { "yamlfix" },
+    --         ["yaml.ansible"] = { "yamlfix" },
+    --       },
+    --     })
+    --   end
+    -- },
     { "diffview.nvim" },
 --     {
 --       "nvim-treesitter",
